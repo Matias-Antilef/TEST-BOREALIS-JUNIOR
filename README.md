@@ -120,3 +120,21 @@ Enviamos la petición con el botón "Send", hay dos posibles respuestas:
   "error": "Not Found",
   "statusCode": 404
 }
+
+## Archivos principales del proyecto
+
+- prisma/migrations:
+
+Se encuentra la "traducción" de la síntaxis de Prisma a PostgreSQL, en fomas de tablas.
+
+- prisma/seeder.ts:
+
+Sirve para ingresar datos para testear la API rapidamente.
+
+- src/modules/categorias:
+
+Esta el endpoint del proyecto, en el archivo .module debo importar prisma para hacer la petición a la base de datos en el .service, primero compruebo si existe el id entregado por parametros y lo devuelvo si existe, si no, envío un error 404.
+
+- docker-compose.yml
+
+En este archivo de docker estoy especificando que imagen de PostgreSQL voy a usar, la versión y sus variables de entorno.
