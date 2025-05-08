@@ -14,7 +14,7 @@ Versiones utilizadas:
 - Abrir la terminal y copiar el siguiente comando:
 
 ```bash
-  git remote clone https://github.com/Matias-Antilef/TEST-BOREALIS-JUNIOR.git
+  git clone https://github.com/Matias-Antilef/TEST-BOREALIS-JUNIOR.git
 ```
 
 - Abrir la carpeta clonada con el editor de codigo.
@@ -63,10 +63,8 @@ POSTGRES_PASSWORD=pruebajr
 - Nos aseguramos de tener la aplicación de Docker corriendo y ejecutamos el siguiente comando, para levantar la base de datos:
 
 ```bash
-  docker-compose up
+  docker-compose up -d
 ```
-
-#### Dejaremos esta terminal activa y ahora abriremos una nueva terminal para ejecutar los siguientes pasos.
 
 - Ahora migramos los modelos del archivo prisma/schema.prisma a la sintaxis de la base de datos que estamos usando (En este caso PostgreSQL):
 
@@ -88,4 +86,37 @@ POSTGRES_PASSWORD=pruebajr
 
 # Cómo testear el endpoint en Postman
 
-- 
+1.- Creamos un nuevo espacio de trabajo.
+2.- Seleccionamos API Testing.
+3.- Le designamos un nombre y creamos.
+4.- En la esquina superior izquierda pinchamos en "new".
+5.- Seleccionamos la opción HTTP.
+6.- Nos aseguramos de que sea una petición GET e ingresamos la URL base:
+```bash
+  http://localhost:3000  
+```
+
+En este caso queremos entrar en la ruta de categorias con un ID en especifico, por lo que se veria asi:
+
+```bash
+  http://localhost:3000/categoria/1  
+```
+
+Enviamos la petición con el botón "Send", hay dos posibles respuestas:
+
+
+1.- En el caso de que el ID exista se mostrará:
+
+{
+  "id": 1,
+  "nombre": "NOMBRE DE UNA CATEGORIA"
+}
+
+
+2.- En el caso de que NO exista el ID se mostrará:
+
+{
+  "message": "Categoría no encontrada",
+  "error": "Not Found",
+  "statusCode": 404
+}
