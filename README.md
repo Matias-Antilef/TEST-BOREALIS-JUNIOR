@@ -126,7 +126,7 @@ La petición con cURL se usaría la siguiente sintaxís:
 ```bash
   curl --location 'curl --location 'http://localhost:3000/categoria/1''
 ```
-En la cual se pueden agregan headers u otro tipo de opciones separandolas con un \, por ejemplo:
+En la cual se pueden agregan headers u otro tipo de opciones separandolas con un \\, por ejemplo:
 
 - Ejemplo si queremos enviar un nombre de categoria en el body:
 
