@@ -96,7 +96,7 @@ POSTGRES_PASSWORD=pruebajr
   http://localhost:3000  
 ```
 
-En este caso queremos entrar en la ruta de categorias con un ID en especifico, por lo que se veria asi:
+En este caso queremos entrar en la ruta de categorias con un ID en especifico, por lo que se veria asi (El número 1 se puede cambiar por otro valor numerico, ya que es dínamico):
 
 ```bash
   http://localhost:3000/categoria/1  
