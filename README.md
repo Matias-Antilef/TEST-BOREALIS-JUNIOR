@@ -121,6 +121,21 @@ Enviamos la petición con el botón "Send", hay dos posibles respuestas:
   "statusCode": 404
 }
 
+La petición con cURL se usaría la siguiente sintaxís:
+
+```bash
+  curl --location 'curl --location 'http://localhost:3000/categoria/1''
+```
+En la cual se pueden agregan headers u otro tipo de opciones separandolas con un \, por ejemplo:
+
+- Ejemplo si queremos enviar un nombre de categoria en el body:
+
+```bash
+  curl --location 'https://localhost:3000/categoria/nuevaCategoria' \
+  --header 'Content-Type: application/json' \
+  --data '{"nombre":"patente"}'
+```
+
 ## Archivos principales del proyecto
 
 - prisma/migrations:
