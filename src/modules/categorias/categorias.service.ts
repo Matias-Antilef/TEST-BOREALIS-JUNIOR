@@ -5,6 +5,7 @@ import { PrismaService } from '../prisma/prisma.service';
 export class CategoriasService {
   constructor(private prisma: PrismaService) {}
   async getById(id: number) {
+    console.log(id);
     const categoriaBuscada = await this.prisma.categorias.findUnique({
       where: { id },
     });
